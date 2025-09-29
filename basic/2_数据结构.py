@@ -1,4 +1,6 @@
 # list
+from sqlalchemy.util.preloaded import import_prefix
+
 print("========== list ==========")
 a = [1, 2, 3]
 print(a[:-1])
@@ -116,4 +118,38 @@ def colculate_BMI(height, weight):
     return bmi
 colculate_BMI(1.75, 70)
 
+
+# format
+print("========== format ==========")
+name = "allen"
+age = 18
+message_content = "hello, my name is {0}, i am {1} years old".format(name, age)
+print(message_content)
+message_content = f"hello, my name is {name}, i am {age} years old"
+print(message_content)
+gpa_dict = {"allen": 3.8, "bob": 3.5, "cindy": 3.9}
+for student, gpa in gpa_dict.items():
+    print(f"{student} has a GPA of {gpa:.2f}")
+# def
+print("========== def ==========")
+def colculate_BMI(height, weight):
+    bmi = weight / (height * height)
+    if bmi < 18.5:
+        category = "underweight"
+    elif 18.5 <= bmi < 24:
+        category = "normal weight"
+    elif 24 <= bmi < 28:
+        category = "overweight"
+    else:
+        category = "obesity"
+    print(f"您的bmi值为: {bmi:.2f}", f"您当前的体重状态为: {category}")
+    return bmi
+colculate_BMI(1.75, 70)
+
+# 引入模块
+print("========== import ==========")
+import statistics
+print(statistics.median([1, 2, 3]))
+from statistics import median
+print(median([1, 2, 3]))
 
