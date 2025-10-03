@@ -153,3 +153,15 @@ print(statistics.median([1, 2, 3]))
 from statistics import median
 print(median([1, 2, 3]))
 
+# class
+print("========== class ==========")
+class CuteCat:
+    def __init__(self, name, age, color):
+        self.name = name
+        self.age = age
+        self.color = color
+
+
+cat1 = CuteCat("mimi", 18, "red")
+print(f'cat1 name is {cat1.name}, age is {cat1.age}, color is {cat1.color}')
+
