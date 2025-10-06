@@ -165,3 +165,36 @@ class CuteCat:
 cat1 = CuteCat("mimi", 18, "red")
 print(f'cat1 name is {cat1.name}, age is {cat1.age}, color is {cat1.color}')
 
+class Student:
+    def __init__(self, name, ID):
+        self.name = name
+        self.ID = ID
+        self.grades  = {"语文": 0, "数学": 0, "英语":0}
+
+    def set_grades(self, subject, grade):
+        if subject in self.grades:
+            self.grades[subject] = grade
+        else:
+            print(f"科目{subject}不存在")
+
+    def print(self):
+        print(f'chen name is {self.name}, ID is {self.ID}, grades is {self.grades}')
+
+chen = Student("小陈", "S12345")
+chen.set_grades("语文", 85)
+print(f'chen name is {chen.name}, ID is {chen.ID}, grades is {chen.grades}')
+
+class Tv:
+    def __init__(self, brand,size,color):
+        self.brand = brand
+        self.size = size
+        self.color = color
+
+    def set_name(self, name):
+        self.name = name
+
+    def print(self):
+        print(f'Tv brand is {self.brand}, size is {self.size}, color is {self.color}, name is {self.name}')
+tv1 = Tv("海信", 55, "black")
+tv1.set_name("客厅电视")
+tv1.print()
