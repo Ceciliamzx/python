@@ -198,3 +198,32 @@ class Tv:
 tv1 = Tv("海信", 55, "black")
 tv1.set_name("客厅电视")
 tv1.print()
+
+class Employee:
+    def __init__(self, name, id):
+        self.name = name
+        self.id = id
+    def print(self, info):
+        print(f'Employee name is {self.name}, id is {self.id} ')
+
+class FullTimeEmployee(Employee):
+    def __init__(self, name, id, monthly_salary):
+        super().__init__(name,id)
+        self.monthly_salary = monthly_salary
+
+    def calculate_monthly_salary(self):
+        return self.monthly_salary
+
+class PartTimeEmployee(Employee):
+    def __init__(self, name, id, daily_salary, work_days):
+        super().__init__(name,id)
+        self.daily_salary = daily_salary
+        self.work_days = work_days
+    def calculate_monthly_salary(self):
+        return self.daily_salary * self.work_days
+
+ft_emp = FullTimeEmployee("小张", "E12345", 8000)
+pt_emp = PartTimeEmployee("小李", "E54321", 300, 20)
+print(f'Full-time Employee: {ft_emp.name}, Monthly Salary: {ft_emp.calculate_monthly_salary()}')
+print(f'Part-time Employee: {pt_emp.name}, Monthly Salary: {pt_emp.calculate_monthly_salary()}')
+print(ft_emp.calculate_monthly_salary())
