@@ -1,4 +1,6 @@
 # list
+from fileinput import close
+
 from sqlalchemy.util.preloaded import import_prefix
 
 print("========== list ==========")
@@ -222,8 +224,23 @@ class PartTimeEmployee(Employee):
     def calculate_monthly_salary(self):
         return self.daily_salary * self.work_days
 
+
 ft_emp = FullTimeEmployee("小张", "E12345", 8000)
 pt_emp = PartTimeEmployee("小李", "E54321", 300, 20)
 print(f'Full-time Employee: {ft_emp.name}, Monthly Salary: {ft_emp.calculate_monthly_salary()}')
 print(f'Part-time Employee: {pt_emp.name}, Monthly Salary: {pt_emp.calculate_monthly_salary()}')
 print(ft_emp.calculate_monthly_salary())
+
+# 读取文件
+print("========== file ==========")
+f = open(".\data.txt", "r", encoding="utf-8")
+content = f.read()
+print(content)
+f.close()
+with open(".\data.txt", "r", encoding="utf-8") as f:
+    content = f.read()
+    print(content)
+with open(".\data.txt", "r", encoding="utf-8") as f:
+    lines = f.readlines()
+    for line in lines:
+        print(line)
