@@ -1,0 +1,119 @@
+# list
+from fileinput import close
+
+from sqlalchemy.util.preloaded import import_prefix
+
+print("========== list ==========")
+a = [1, 2, 3]
+print(a[:-1])
+
+a[0] = 100
+print(a)
+
+a.append(4)
+print(a)
+
+a.insert(0, 200)
+print(a)
+
+# dict
+print("========== json dict 对象object 结构体 ==========")
+allen = {"name":"allen", 'age':18, 'height': 1.75, "icon": "https://www.baidu.com/img/flexible/logo/pc/result.png"}
+print(allen['name'])
+print(allen.get('age'))
+
+student_newcastle = [
+    allen,
+    {"name": "bob", 'age':20, 'height': 1.85},
+    {"name": 'cindy', "age":19, 'height': 1.65, 'color': "red"}
+]
+
+# 对象object vs 实例
+# 电视=对象，海信电视=实例
+
+# stack
+print("========== stack ==========")
+stack = [1, 2, 3]
+print(stack)
+print(stack.pop())
+print(stack)
+print(stack.pop())
+print(stack.pop())
+print(stack)
+
+# 对字符串求长度
+print("========== string ==========")
+s = "hello, world"
+print(len(s))
+print(s[0])
+print(s[11])
+print(s[len(s) -1])
+print(s[5:7])
+print(s[-7:])
+print(s[:5])
+print(s[:])
+
+# format
+print("========== format ==========")
+name = "allen"
+age = 18
+message_content = "hello, my name is {0}, i am {1} years old".format(name, age)
+print(message_content)
+message_content = f"hello, my name is {name}, i am {age} years old"
+print(message_content)
+gpa_dict = {"allen": 3.8, "bob": 3.5, "cindy": 3.9}
+for student, gpa in gpa_dict.items():
+    print(f"{student} has a GPA of {gpa:.2f}")
+
+
+
+# format
+print("========== format ==========")
+name = "allen"
+age = 18
+message_content = "hello, my name is {0}, i am {1} years old".format(name, age)
+print(message_content)
+message_content = f"hello, my name is {name}, i am {age} years old"
+print(message_content)
+gpa_dict = {"allen": 3.8, "bob": 3.5, "cindy": 3.9}
+for student, gpa in gpa_dict.items():
+    print(f"{student} has a GPA of {gpa:.2f}")
+
+# 引入模块
+print("========== import ==========")
+import statistics
+print(statistics.median([1, 2, 3]))
+from statistics import median
+print(median([1, 2, 3]))
+
+
+
+
+ft_emp = FullTimeEmployee("小张", "E12345", 8000)
+pt_emp = PartTimeEmployee("小李", "E54321", 300, 20)
+print(f'Full-time Employee: {ft_emp.name}, Monthly Salary: {ft_emp.calculate_monthly_salary()}')
+print(f'Part-time Employee: {pt_emp.name}, Monthly Salary: {pt_emp.calculate_monthly_salary()}')
+print(ft_emp.calculate_monthly_salary())
+
+# 读取文件
+print("========== file ==========")
+f = open(".\data.txt", "r", encoding="utf-8")
+content = f.read()
+print(content)
+f.close()
+with open(".\data.txt", "r", encoding="utf-8") as f:
+    content = f.read()
+    print(content)
+with open(".\data.txt", "r", encoding="utf-8") as f:
+    lines = f.readlines()
+    for line in lines:
+        print(line)
+
+with open(".\poem.txt", "w", encoding="utf-8") as f:
+    f.write("我欲乘风归去\n")
+    f.write("又恐琼楼玉宇\n")
+    f.write("高处不胜寒\n")
+
+with open(".\poem.txt", "a", encoding="utf-8") as f:
+    f.write("起舞弄清影\n")
+    f.write("何似在人间\n")

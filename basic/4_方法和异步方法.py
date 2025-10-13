@@ -1,9 +1,14 @@
-
-
-def sum(a, b):
-    return a + b
-print(sum(1,2))
-
+# queue: 异步(提高响应速度)，削峰()，解耦
+print("========== queue ==========")
+from collections import deque
+queue = deque([1, 2, 3])
+print(queue)
+queue.insert(0, 4)
+print(queue)
+queue.pop()
+print(queue)
+queue.pop()
+print(queue)
 
 def test(a):
     result = 0
