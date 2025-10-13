@@ -27,3 +27,47 @@ lst2 = [200, 50, 300, 20, 400]
 lst3 = lst1 + lst2
 lst3.sort()
 print(lst3)
+
+class HomeAppliance:
+    def control(self):
+        pass
+class Tv(HomeAppliance):
+    def control(self):
+        print("切换视频至中央一台")
+class AirConditioner(HomeAppliance):
+    def control(self):
+        print("空调温度调至26度")
+class Light(HomeAppliance):
+    def control(self):
+        print("切换为暖光模式")
+
+def operate_appliance(appliance: HomeAppliance):
+    appliance.control()
+
+tv = Tv()
+ac = AirConditioner()
+light = Light()
+operate_appliance(tv)
+operate_appliance(ac)
+operate_appliance(light)
+
+
+class Animal:
+    def yieling(self):
+        pass
+class Dog(Animal):
+    def yieling(self):
+        print("wow")
+class Cat(Animal):
+    def yieling(self):
+        print("meow")
+def make_animal_sound (animal:Animal):
+    animal.yieling()
+
+dog1 = Dog()
+cat1 = Cat()
+make_animal_sound(dog1)
+make_animal_sound(cat1)
+
+
+
