@@ -120,3 +120,43 @@ def sum_of_square(n):
         result += number * number
     return result
 print(sum_of_square(5))
+
+# 13.计算列表所有数字的和
+def sum (param_list):
+    total = 0
+    for item in param_list:
+        total += item
+    return total
+list1 = [1,2,3,4]
+print(f"sum of {list1},",sum(list1))
+print(sum(list1))
+
+# 14.数字范围中所有的偶数(列表代表式）
+data =[item for item in range(begin,end) if item % 2 == 0]
+begin = 4
+end = 15
+print(f"begin={begin},end={end},even numbers :",data)
+
+# 15.移除列表中的多个元素
+list1 = [3,5,7,9,11,13]
+list2 = [7,11]
+data = [item for item in list1 if item not in list2]
+print(f"from{list1} remove{list2},result:",data)
+
+# 16.怎样对列表元素去重(set集合不会包含重复元素）
+list1 = [10,20,30,10,20]
+print(f"source list{list1},unique list:",list(set(list1)))
+
+# 17.怎么对简单列表元素进行排序
+list1 = [20,40,30,50]
+# list1.sort()原地排序
+list2 = sorted(list1)
+print(list1)
+print(list2)
+
+list1 = [20,40,30,50]
+list1.sort(reverse=True)
+print(list1)
+
+
+
