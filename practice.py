@@ -158,5 +158,80 @@ list1 = [20,40,30,50]
 list1.sort(reverse=True)
 print(list1)
 
+# 18.怎样实现学生成绩排序
+students = [
+    {"sno":101,"sname":"allen","sgrade":88},
+    {"sno":102,"sname":"bob","sgrade":99},
+    {"sno":103,"sname":"ceci","sgrade":77},
+    {"sno":104,"sname":"lucy","sgrade":66},
+]
+students_sort = sorted(students,key = lambda x:x["sgrade"],reverse = True)
 
+print(students)
+print(students_sort)
 
+# 19.读取成绩文件排序数据并写成一个新的文件
+def read_file():
+    result = []
+    with open (".\student_grade_input.txt") as f:
+        for line in f:
+            line = line[:-1]
+            result.append(line.split(","))
+        return result
+def sort_grades(datas):
+    return sorted(datas,key = lambda x:int(x[2]),reverse = True)
+def write_file(datas):
+    with open(".\student_grade_output.txt","w") as f:
+        for data in datas:
+            f.write(",".join(data) + "\n")
+datas = read_file()
+print("read_file datas:",datas)
+datas = sort_grades(datas)
+print("sort_grades datas:",datas)
+write_file(datas)
+
+# 20.统计学生成绩高分低分平均分
+def computer_score():
+    scores = []
+    with open ("./student_grade_input.txt") as f:
+        for line in f:
+            line = line[:-1]
+            fields = line.split(",")
+            scores.append(int(fields[-1]))
+    max_score = max(scores)
+    min_score = min(scores)
+    avg_score = round( sum(scores) / len(scores),2)
+    return max_score,min_score,avg_score
+
+max_score, min_score, avg_score = computer_score()
+print(f"max_score={max_score}, min_score{min_score}, avg_score{avg_score}")
+
+# 21.统计英语文章每个单词的出现次数
+word_count = {}
+with open ("./english.article.txt")as f:
+    for line in f:
+        line = line[:-1]
+        words = line.split()
+    for word in words:
+        if word not in word_count:
+            word_count[word] = 0
+        word_count[word] += 1
+print(word_count)
+print(
+sorted(
+    word_count.items(),
+    key = lambda x:x[1],
+    reverse = True
+)[:10]
+)
+
+# 22.统计目录下的文件大小
+# 当前文件大小
+import os
+print(os.path.getsize("student_grade_output.txt"))
+# 目录下所有文件大小
+sum_size = 0
+for file in os.listdir("."):
+    if os.path.isfile(file):
+        sum_size += os.path.isfile(file)
+print(sum_size/1000)
