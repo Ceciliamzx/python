@@ -226,7 +226,7 @@ sorted(
 )
 
 # 22.统计目录下的文件大小
-# 当前文件大小
+# 单个文件大小
 import os
 print(os.path.getsize("student_grade_output.txt"))
 # 目录下所有文件大小
